@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 namespace WestWindConsole.Entities
 {
     // TODO: Begin reviewing entity attributes
-    [Table("Categories")]
+    // Identifies which database table this entity is supposed to represent (be "mapped" to)
+    [Table("Categories", Schema = "ddo")] //default schma is ddo in microsoft sql server
     public class Category
     {
-        [Key]
+        [Key] //Indicates that this property maps to the primary key in the database
         public int CategoryID { get; set; }
 
         [Required] // Use this for string/varchar columns that are NOT NULL

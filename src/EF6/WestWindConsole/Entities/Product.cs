@@ -28,7 +28,7 @@ namespace WestWindConsole.Entities
         [Range(0, double.MaxValue)]
         public decimal UnitPrice { get; set; }
 
-        [Range(0, int.MaxValue)]
+        [Range(0, int.MaxValue)] //0 or greater
         public int UnitsOnOrder { get; set; }
 
         public bool Discontinued { get; set; }
