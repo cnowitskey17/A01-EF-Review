@@ -10,7 +10,7 @@ namespace WestWindConsole.Entities
 {
     // TODO: Begin reviewing entity attributes
     // Identifies which database table this entity is supposed to represent (be "mapped" to)
-    [Table("Categories"/*, Schema = "ddo"*/)] //default schma is ddo in microsoft sql server (didn't work for me)
+    [Table("Categories", Schema = "dbo")] //default schma is ddo in microsoft sql server (didn't work for me)
     public class Category
     {
         [Key] //Indicates that this property maps to the primary key in the database
