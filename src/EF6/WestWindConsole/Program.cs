@@ -49,9 +49,48 @@ namespace WestWindConsole
                         DisplayShippers();
                         break;
                     // TODO: Practice - Display methods for remaining tables
+                    case 9:
+                        DisplayAddresses();
+                        break;
+                    case 10:
+                        DisplayBuildVersions();
+                        break;
+                    case 11:
+                        DisplayCustomers();
+                        break;
                 }
                 Pause();
             } while (menuChoice > 0 && menuChoice <= 15);
+        }
+
+        private void DisplayCustomers()
+        {
+            using (var context = new WestWindContext())
+            {
+                int count = context.Customers.Count();
+                // $ - String Interpolation
+                Console.WriteLine($"There are {count} Customers");
+            }
+        }
+
+        private void DisplayBuildVersions()
+        {
+            using (var context = new WestWindContext())
+            {
+                int count = context.BuildVersions.Count();
+                // $ - String Interpolation
+                Console.WriteLine($"There are {count} Build Versions");
+            }
+        }
+
+        private void DisplayAddresses()
+        {
+            using (var context = new WestWindContext())
+            {
+                int count = context.Addresses.Count();
+                // $ - String Interpolation
+                Console.WriteLine($"There are {count} Addresses");
+            }
         }
 
         private void Pause()
@@ -158,6 +197,9 @@ namespace WestWindConsole
             Console.WriteLine("6) Employee Territories");
             Console.WriteLine("7) Shipments");
             Console.WriteLine("8) Shippers");
+            Console.WriteLine("9) Addresses");
+            Console.WriteLine("10) Build Versions");
+            Console.WriteLine("11) Customers");
             // TODO: Practice - Menu options for remaining tables
 
             Console.Write("Select a table (or 0 to exit): ");
